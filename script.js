@@ -67,7 +67,6 @@ var rn = moment().format("YYYY-MM-DD HH");
 //loop through all the time blocks and set their colors using moment.js time comparisons, also set input values and add event listeners to save buttons
 for (i = 0; i < all.length; i++) {
     dateyCurrent = datey + all[i].num;
-    console.log(moment(rn).isSameOrBefore(dateyCurrent));
     if (moment(rn).isBefore(dateyCurrent)) {
         all[i].spot.setAttribute("class", "col-10 future");
     };
@@ -93,7 +92,6 @@ five.btnSpot.addEventListener("click", function() {saveInput(five.spot, 8)})
 
 
 function saveInput(spotty, num) {
-    console.log("running");
     inputValues[num] = spotty.value;
     localStorage.setItem("inputValuesSto", JSON.stringify(inputValues));
 }
